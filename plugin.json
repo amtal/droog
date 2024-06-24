@@ -12,6 +12,6 @@
    },
    "platforms": ["Darwin", "Windows", "Linux"],
    "installinstructions": {},
-   "version": "1.0.2",
+   "version": "1.0.4",
    "minimumbinaryninjaversion": 2800
 }
