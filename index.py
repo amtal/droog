@@ -32,10 +32,10 @@ from concurrent.futures import ThreadPoolExecutor
 # Has to be same install method as this one. ;)
 # Hangs if you've got recursive links in plugin dirs??
 STRIP_VARIANTS = r"_?(32|64)?(el|eb|be|_le|_eb|_be|l)?$"
-PLUGIN_DIR = Path(__file__).parent.parent.absolute()
+MANUALS_DIR = Path(bn.user_directory()) / "manuals"
 
 def find_manuals_in_siblings(arch_guess):
-    return glob.glob(f"{PLUGIN_DIR}/*{arch_guess}*/**/*.pdf", recursive=True)
+    return glob.glob(f"{MANUALS_DIR}/*{arch_guess}*/**/*.pdf", recursive=True)
 
 manuals = {}  # main cache, acceptable RAM use
 def go(instr, action="Search", bv=None, arch=None):
