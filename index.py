@@ -57,7 +57,7 @@ def go(instr, action="Search", bv=None, arch=None):
             f.result()     # in python 4.15, no hell below us, above us only sky
         bn.log_info(f"Searched and rendered {instr} in {time()-t:.2f}s", "Plugin.DROOG")
 
-TOKENIZE = r'[ —]+'  # space in general, em-dash for Intel
+TOKENIZE = r'[ —/]+'  # space in general, em-dash for Intel
 
 class Manual:
     def __init__(self, pdf):
@@ -164,3 +164,4 @@ def create_redirect_html(pdf_path, page_number):
         </script></body></html>''')
         temp_html.flush()
         return 'file://'+temp_html.name
+
